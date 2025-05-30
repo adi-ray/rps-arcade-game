@@ -1,0 +1,64 @@
+# AI Prompt: Stone-Paper-Scissors with Pixel Art & 8-Bit Music  
+# Target Library: PyGame (with Pyganim for pixel animations)  
+# Style: Retro arcade vibe, dynamic AI, and special moves  
+
+---  
+### 🎮 **CORE REQUIREMENTS**  
+
+#### 1. **PIXEL ART ASSETS** (Specify these in the game):  
+- **Hand Gestures**:  
+  - `stone_pixel.png` (Rock with crack effects)  
+  - `paper_pixel.png` (Folded origami style)  
+  - `scissors_pixel.png` (Glowing blades)  
+- **UI Elements**:  
+  - Retro buttons (Press Start, Game Over screen)  
+  - Animated VS screen (like Street Fighter)  
+
+#### 2. **8-BIT MUSIC & SFX**:  
+- **Tracks**:  
+  - `main_theme.mod` (Upbeat chiptune loop)  
+  - `victory_jingle.wav` (16-bit fanfare)  
+- **Sound Effects**:  
+  - `rock_smash.wav` (Crunchy byte distortion)  
+  - `paper_flip.wav` (Quick synth swoosh)  
+
+#### 3. **GAME RULES & TUTORIAL** (Pixel Art Pop-Up):  
+- **Visual Tutorial**:  
+  - Pixel-art flowchart showing Stone > Scissors > Paper > Stone.  
+  - "Best of 5 Rounds" rule in retro font.  
+
+#### 4. **INNOVATIVE TWISTS**:  
+- **"Critical Hits"**:  
+  - 5% chance to deal **2x damage** (scored as +2).  
+- **AI "Cheat" Mode**:  
+  - If player wins 3x in a row, AI "rage quits" and picks randomly.  
+
+#### 5. **DYNAMIC UI**:  
+- **Health Bars**: Pixel-art hearts for score tracking.  
+- **AI Mood Meter**: Changes from 😊 → 😠 → 💢 based on losses.  
+
+---  
+### 💻 **CODE STRUCTURE (PyGame)**  
+```python
+# Pixel Art Animation Example  
+import pygame, pyganim  
+
+# Load pixel art  
+stone_anim = pyganim.PygAnimation([("stone_pixel.png", 0.1), ("stone_blast.png", 0.1)])  
+
+# 8-bit Music  
+pygame.mixer.music.load("main_theme.mod")  
+pygame.mixer.music.play(-1)  # Loop forever  
+
+# AI Mood System  
+ai_mood = "happy"  
+if player_score >= 3:  
+    ai_mood = "angry"  
+```
+
+### FOLLOW-UP QUESTIONS:
+"How to optimize pixel art scaling in PyGame without blurring?"
+
+"Best tools to create 8-bit music (e.g., Bosca Ceoil, Famitracker)?"
+
+"Suggestions for retro color palettes (like NES or Game Boy)?"
