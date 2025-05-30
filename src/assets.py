@@ -3,7 +3,7 @@ Asset loading and management for the Stone-Paper-Scissors game.
 """
 import os
 import pygame
-from src.config import NES_BLACK, NES_RED, NES_GREEN, NES_BLUE, NES_YELLOW
+from src.config import NES_BLACK, NES_RED, NES_GREEN, NES_BLUE, NES_YELLOW, NES_WHITE
 
 def create_placeholder_image(width, height, color, text=""):
     """Create a placeholder image with text"""
