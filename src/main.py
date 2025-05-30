@@ -20,7 +20,14 @@ class Game:
         """Initialize the game"""
         # Initialize pygame
         pygame.init()
-        pygame.mixer.init()
+        
+        # Try to initialize the mixer, but continue if it fails
+        try:
+            pygame.mixer.init()
+            self.audio_available = True
+        except pygame.error:
+            print("Warning: Audio device not available. Running without sound.")
+            self.audio_available = False
         
         # Set up the screen
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.SCALED)
@@ -30,7 +37,7 @@ class Game:
         self.fonts = init_fonts()
         
         # Load assets
-        self.assets, self.sounds = load_assets()
+        self.assets, self.sounds = load_assets(self.audio_available)
         
         # Initialize game state
         self.game_state = GameState(self.sounds)
@@ -97,7 +104,7 @@ class Game:
                 # Check if game is over
                 if self.game_state.is_game_over():
                     self.current_state = RESULT
-                    if self.game_state.player_score > self.game_state.ai_score and self.sounds["victory"]:
+                    if self.game_state.player_score > self.game_state.ai_score and self.sounds.get("victory"):
                         self.sounds["victory"].play()
         
         elif self.current_state == RESULT:

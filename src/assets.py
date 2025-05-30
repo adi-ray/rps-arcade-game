@@ -55,7 +55,7 @@ def load_music(filename):
         print(f"Unable to load music: {filename} - {e}")
         return False
 
-def load_assets():
+def load_assets(audio_available=True):
     """Load all game assets and return them in a dictionary"""
     # Create assets directory if it doesn't exist
     if not os.path.exists('assets'):
@@ -100,16 +100,20 @@ def load_assets():
         if os.path.exists(os.path.join('assets', filename)):
             assets[key] = load_image(filename)
 
-    # Sound effects
-    sounds = {
-        "rock_smash": load_sound("rock_smash.wav"),
-        "paper_flip": load_sound("paper_flip.wav"),
-        "scissors_snip": load_sound("scissors_snip.wav"),
-        "victory": load_sound("victory_jingle.wav"),
-        "critical": load_sound("critical_hit.wav")
-    }
-
-    # Try to load music
-    load_music("main_theme.mod")
+    # Sound effects (only if audio is available)
+    sounds = {}
+    if audio_available:
+        sounds = {
+            "rock_smash": load_sound("rock_smash.wav"),
+            "paper_flip": load_sound("paper_flip.wav"),
+            "scissors_snip": load_sound("scissors_snip.wav"),
+            "victory": load_sound("victory_jingle.wav"),
+            "critical": load_sound("critical_hit.wav")
+        }
+        
+        # Try to load music
+        load_music("main_theme.mod")
+    else:
+        print("Audio disabled. Game will run without sound effects and music.")
     
     return assets, sounds

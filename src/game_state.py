@@ -70,14 +70,14 @@ class GameState:
             elif self.ai_consecutive_losses >= 1:
                 self.ai_mood = "annoyed"
                 
-            # Play sound effects
-            if self.sounds["critical"] and critical_hit:
+            # Play sound effects if available
+            if critical_hit and self.sounds.get("critical"):
                 self.sounds["critical"].play()
-            elif player == "stone" and self.sounds["rock_smash"]:
+            elif player == "stone" and self.sounds.get("rock_smash"):
                 self.sounds["rock_smash"].play()
-            elif player == "paper" and self.sounds["paper_flip"]:
+            elif player == "paper" and self.sounds.get("paper_flip"):
                 self.sounds["paper_flip"].play()
-            elif player == "scissors" and self.sounds["scissors_snip"]:
+            elif player == "scissors" and self.sounds.get("scissors_snip"):
                 self.sounds["scissors_snip"].play()
         else:
             self.result = "lose"
@@ -85,12 +85,12 @@ class GameState:
             self.ai_consecutive_losses = 0
             self.ai_mood = "happy"
             
-            # Play sound effects
-            if ai == "stone" and self.sounds["rock_smash"]:
+            # Play sound effects if available
+            if ai == "stone" and self.sounds.get("rock_smash"):
                 self.sounds["rock_smash"].play()
-            elif ai == "paper" and self.sounds["paper_flip"]:
+            elif ai == "paper" and self.sounds.get("paper_flip"):
                 self.sounds["paper_flip"].play()
-            elif ai == "scissors" and self.sounds["scissors_snip"]:
+            elif ai == "scissors" and self.sounds.get("scissors_snip"):
                 self.sounds["scissors_snip"].play()
                 
     def next_round(self):
