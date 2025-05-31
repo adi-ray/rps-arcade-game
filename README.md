@@ -1,12 +1,34 @@
-# Stone-Paper-Scissors: 8-Bit Battle
+# 🎮 8-Bit Stone-Paper-Scissors Battle
 
-A retro-style Stone-Paper-Scissors game with pixel art graphics and 8-bit music, built with PyGame.
+A retro arcade-style Rock-Paper-Scissors experience with authentic pixel art and chiptune music, built with PyGame.
 
-## Repository
+<div align="center">
+  <!-- Tech Stack -->
+  <a href="https://pygame.org">
+    <img src="https://custom-icon-badges.demolab.com/badge/Powered_By-Pygame_2.5+-ff6600?logo=pygame&style=for-the-badge&logoColor=white" alt="Pygame">
+  </a>
+  <a href="https://www.python.org/downloads/">
+    <img src="https://custom-icon-badges.demolab.com/badge/Python-3.8%2B-3776ab?logo=python&style=for-the-badge" alt="Python">
+  </a>
+  <a href="https://aws.amazon.com/q/">
+    <img src="https://custom-icon-badges.demolab.com/badge/Assisted_By-Amazon_Q-FF9900?logo=amazonaws&style=for-the-badge" alt="Amazon Q">
+  </a>
+</div>
 
-GitHub: https://github.com/adi-ray/rps-arcade-game
+<div align="center">
+  <!-- Community -->
+  <a href="CONTRIBUTING.md">
+    <img src="https://custom-icon-badges.demolab.com/badge/Contributions-Welcome-2ecc71?logo=git-pull-request&style=for-the-badge" alt="Contributions">
+  </a>
+  <a href="https://github.com/adi-ray/rps-arcade-game/blob/main/LICENSE">
+    <img src="https://custom-icon-badges.demolab.com/badge/License-MIT-3498db?logo=law&style=for-the-badge" alt="MIT License">
+  </a>
+  <a href="https://dev.to/adiray">
+    <img src="https://custom-icon-badges.demolab.com/badge/Dev_Blog-Post-0A0A0A?logo=dev.to&style=for-the-badge" alt="Dev Blog">
+  </a>
+</div>
 
-## Features
+## ✨ Features
 
 - Classic Stone-Paper-Scissors gameplay with a retro arcade twist
 - Pixel art graphics with authentic NES color palette
@@ -17,60 +39,58 @@ GitHub: https://github.com/adi-ray/rps-arcade-game
 - Health bar system with pixel hearts
 - AI mood meter that changes based on game progress
 
-## Code Structure
-
-The game follows a modular architecture for better organization and maintainability:
-
-```
-stone_paper_scissors_game/
-├── assets/                  # Game assets directory
-├── src/                     # Source code directory
-│   ├── __init__.py          # Makes src a Python package
-│   ├── assets.py            # Asset loading functions
-│   ├── config.py            # Game configuration and constants
-│   ├── game_state.py        # Game state management
-│   ├── main.py              # Main game class
-│   ├── screens/             # Different game screens
-│   │   ├── __init__.py
-│   │   ├── game.py          # Main game screen
-│   │   ├── menu.py          # Menu screen
-│   │   ├── result.py        # Result screen
-│   │   └── tutorial.py      # Tutorial screen
-│   └── utils/               # Utility functions
-│       ├── __init__.py
-│       └── helpers.py       # Helper functions
-├── run_game.py              # Script to run the game
-```
-
-## Installation
+## 🛠️ Installation
 
 1. Clone this repository:
+
 ```bash
 git clone https://github.com/adi-ray/rps-arcade-game.git
 cd rps-arcade-game
 ```
 
 2. Install the required dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 3. Run the game:
+
 ```bash
 python run_game.py
 ```
 
-## Controls
+> **Note**: Requires Python 3.8+ and PyGame 2.0+
+
+## 🕹️ Controls
 
 - Use your mouse to navigate menus and make choices
 - Click on Stone, Paper, or Scissors to make your move
 - Click anywhere to continue after each round
 
+## 🗂️ Project Structure
+
+The game follows a modular architecture for better organization and maintainability:
+
+```plaintext
+stone_paper_scissors_game/
+├── assets/              # All game assets (images/sounds)
+├── src/
+│   ├── screens/         # Game state screens
+│   │   ├── game.py      # Core gameplay
+│   │   ├── menu.py      # Main menu
+│   │   └── ...
+│   └── utils/           # Helper functions
+├── config.py            # Game constants
+└── run_game.py          # Launch script
+```
+
 ## Asset Requirements
 
 The game looks for the following assets in an `assets` folder:
 
 ### Images
+
 - `stone_pixel.png` - Rock with crack effects
 - `paper_pixel.png` - Folded origami style
 - `scissors_pixel.png` - Glowing blades
@@ -83,6 +103,7 @@ The game looks for the following assets in an `assets` folder:
 - `tutorial_pixel.png` - Tutorial screen graphic
 
 ### Sounds
+
 - `rock_smash.wav` - Sound effect for stone
 - `paper_flip.wav` - Sound effect for paper
 - `scissors_snip.wav` - Sound effect for scissors
@@ -92,117 +113,41 @@ The game looks for the following assets in an `assets` folder:
 
 If these assets are not found, the game will use placeholder graphics and no sound.
 
-## Creating Pixel Art Assets
+## 🎨 Asset Creation Guide
 
-For the best retro look, create your pixel art assets using the NES color palette:
+### Recommended Tools
 
-- Black: (0, 0, 0)
-- White: (255, 255, 255)
-- Red: (188, 56, 56)
-- Green: (88, 176, 60)
-- Blue: (48, 80, 184)
-- Yellow: (248, 216, 96)
-- Orange: (236, 88, 0)
-- Brown: (168, 92, 28)
-- Purple: (144, 48, 136)
-- Cyan: (0, 168, 168)
-- Pink: (252, 116, 180)
-- Gray: (104, 104, 104)
+| Asset Type  | Tools                       |
+| ----------- | --------------------------- |
+| Pixel Art   | Aseprite, Piskel, PyxelEdit |
+| 8-bit Music | FamiTracker, Bosca Ceoil    |
 
-Recommended tools for creating pixel art:
-- Aseprite
-- PyxelEdit
-- Piskel (free, browser-based)
+### NES Color Palette
 
-## Creating 8-bit Music
+```python
+NES_BLACK = (0, 0, 0)
+NES_WHITE = (255, 255, 255)
+NES_RED = (188, 56, 56)
+NES_GREEN = (88, 176, 60)
+NES_BLUE = (48, 80, 184)
+NES_YELLOW = (248, 216, 96)
+NES_ORANGE = (236, 88, 0)
+NES_BROWN = (168, 92, 28)
+NES_PURPLE = (144, 48, 136)
+NES_CYAN = (0, 168, 168)
+NES_PINK = (252, 116, 180)
+NES_GRAY = (104, 104, 104)
+```
 
-Recommended tools for creating 8-bit music:
-- FamiTracker (authentic NES sound)
-- Bosca Ceoil (beginner-friendly)
-- BeepBox (browser-based)
-- LMMS (with chiptune plugins)
+## 🤝 Contributing
 
-## License
+Please read our [CONTRIBUTING](CONTRIBUTING.md) file for guidelines on how to get started.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 📜 License
 
-## Acknowledgments
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-- Inspired by classic arcade games and the NES era
-- Built with PyGame
+---
 
-## Asset Requirements
-
-The game looks for the following assets in an `assets` folder:
-
-### Images
-- `stone_pixel.png` - Rock with crack effects
-- `paper_pixel.png` - Folded origami style
-- `scissors_pixel.png` - Glowing blades
-- `heart_pixel.png` - Pixel heart for health display
-- `empty_heart_pixel.png` - Empty heart outline
-- `happy_face_pixel.png` - AI happy mood
-- `annoyed_face_pixel.png` - AI annoyed mood
-- `angry_face_pixel.png` - AI angry mood
-- `vs_screen_pixel.png` - VS screen animation
-- `tutorial_pixel.png` - Tutorial screen graphic
-
-### Sounds
-- `rock_smash.wav` - Sound effect for stone
-- `paper_flip.wav` - Sound effect for paper
-- `scissors_snip.wav` - Sound effect for scissors
-- `victory_jingle.wav` - Victory sound
-- `critical_hit.wav` - Critical hit sound effect
-- `main_theme.mod` - Background music (8-bit chiptune)
-
-If these assets are not found, the game will use placeholder graphics and no sound.
-
-## Creating Pixel Art Assets
-
-For the best retro look, create your pixel art assets using the NES color palette:
-
-- Black: (0, 0, 0)
-- White: (255, 255, 255)
-- Red: (188, 56, 56)
-- Green: (88, 176, 60)
-- Blue: (48, 80, 184)
-- Yellow: (248, 216, 96)
-- Orange: (236, 88, 0)
-- Brown: (168, 92, 28)
-- Purple: (144, 48, 136)
-- Cyan: (0, 168, 168)
-- Pink: (252, 116, 180)
-- Gray: (104, 104, 104)
-
-Recommended tools for creating pixel art:
-- Aseprite
-- PyxelEdit
-- Piskel (free, browser-based)
-
-## Creating 8-bit Music
-
-Recommended tools for creating 8-bit music:
-- FamiTracker (authentic NES sound)
-- Bosca Ceoil (beginner-friendly)
-- BeepBox (browser-based)
-- LMMS (with chiptune plugins)
-
-## Development
-
-To contribute to this project:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b new-feature`
-3. Make your changes
-4. Commit your changes: `git commit -m 'Add new feature'`
-5. Push to the branch: `git push origin new-feature`
-6. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Inspired by classic arcade games and the NES era
-- Built with PyGame
+> Built with ❤️ and Amazon Q CLI 🤖  
+> Inspired by classic NES arcade games 👾
