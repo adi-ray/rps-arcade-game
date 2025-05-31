@@ -23,7 +23,7 @@ A retro arcade-style Rock-Paper-Scissors experience with authentic pixel art and
   <a href="https://github.com/adi-ray/rps-arcade-game/blob/main/LICENSE">
     <img src="https://custom-icon-badges.demolab.com/badge/License-MIT-3498db?logo=law&style=for-the-badge" alt="MIT License">
   </a>
-  <a href="https://dev.to/adiray">
+  <a href="https://dev.to/adiray/building-a-stone-paper-scissors-game-with-amazon-q-cli-a-step-by-step-guide-4d40">
     <img src="https://custom-icon-badges.demolab.com/badge/Dev_Blog-Post-0A0A0A?logo=dev.to&style=for-the-badge" alt="Dev Blog">
   </a>
 </div>
